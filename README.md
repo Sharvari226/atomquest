@@ -1,62 +1,63 @@
-# ⚛️ AtomQuest - Goal Setting & Tracking Portal
+# AtomQuest
 
-**A complete, production-ready Goal & OKR Management System** built for the **AtomQuest Hackathon 1.0**.
+AtomQuest is an intelligent goal setting and performance tracking portal built for hackathons and real-world team workflows.
 
-Fully implements **Phase 1 & Phase 2** requirements with excellent UX and several **Good-to-Have** features.
- 
----
+## Features
+- Notion-style goal editor with checkboxes and rich content
+- Goal drafting, approval, and locking workflow
+- Quarterly check-ins with manager comments
+- AI-powered goal suggestions
+- Employee, manager, and admin dashboards
 
-### ✨ Key Features Implemented
+## Tech Stack
+- Frontend: Next.js, Tailwind CSS, BlockNote
+- Backend: FastAPI, SQLAlchemy, Pydantic
+- Database: PostgreSQL / Supabase
+- AI: LangChain + Groq
 
-- Employee Goal Sheet creation with **Thrust Areas**, UoM, Targets & Weightage
-- **Strict Validation**: 100% total weightage, min 10% per goal, max 8 goals
-- Manager Approval Workflow + Return for Rework
-- Goals get **locked** after approval
-- Real-time **Score Calculation** (Min/Max/Percentage/Timeline/Zero)
-- Quarterly Check-ins with manager comments
-- Role-based dashboards (Employee, Manager, Admin)
-- Audit Trail & Notifications
-- CSV Export for Appraisal Reports
-- Kanban + List view toggle
-- Shared Goals functionality
-- Escalation & Workflow Engine UI
-- Analytics Dashboard with heatmaps & trends
-- AI Integration ready (LangChain prompts included)
-- Beautiful Notion-style inline editing UI
-- Complete Cycle Management view
+## Prerequisites
+- Node.js
+- Python 3.10+
+- PostgreSQL or Supabase
+- Groq API key
 
----
+## Backend Setup
+1. Go to the backend folder.
+2. Create a `.env` file with:
+   - `DATABASEURL`
+   - `GROQAPIKEY`
+3. Install dependencies:
+   - `pip install -r requirements.txt`
+4. Run the server:
+   - `uvicorn app.main:app --reload --port 8000`
 
-### 🛠️ Tech Stack
+## Frontend Setup
+1. Go to the frontend folder.
+2. Install dependencies:
+   - `npm install --legacy-peer-deps`
+3. Start the app:
+   - `npm run dev`
 
-- **Frontend**: React 18 + Vite (Single File → easily splittable)
-- **Styling**: Modern inline + CSS design (Notion-inspired)
-- **State**: React `useState` (easily upgradable to Zustand)
-- **Backend Ready**: Designed for **FastAPI + PostgreSQL + LangChain**
-- **AI**: LangChain agents prepared for goal quality check & smart escalation
+## Environment Variables
+Example:
+- `DATABASEURL=postgresql+asyncpg://...`
+- `GROQAPIKEY=...`
 
----
+## Database
+The schema includes:
+- `users`
+- `goals`
+- `checkins`
 
-### 🚀 Quick Start
+## API
+- `GET /` — Health check
+- `GET /api/goals/users` — List users
+- `GET /api/goals/user/{id}` — List goals for a user
+- `POST /api/goals` — Create a goal
+- `POST /api/goals/smart-suggestions` — Generate AI goal suggestions
 
-```bash
-# Clone
-git clone https://github.com/yourusername/atomquest-portal.git
-cd atomquest-portal
+## Project Status
+Backend, database schema, and initial frontend structure are in place.
 
-# Frontend
-cd frontend
-npm install
-npm run dev
-
-# Backend (Optional)
-cd backend
-pip install -r requirements.txt
-uvicorn app:app --reload
-
-#Users
-Demo Users (Switch via top-right button):
-
-Priya Sharma → Employee
-Vikram Nair → Manager
-Deepika Iyer → Admin
+## License
+Hackathon / internal project use.
