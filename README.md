@@ -59,5 +59,10 @@ The schema includes:
 ## Project Status
 Backend, database schema, and initial frontend structure are in place.
 
+
+## Deployment
+-frontend : https://atomquest-cv5q-34npkgnb8-sharvaris-projects-3d6f9119.vercel.app/
+-backend : https://atomquest-1-61f1.onrender.com
+
 ## License
 Hackathon / internal project use.
