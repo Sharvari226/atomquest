@@ -1,0 +1,1 @@
+/* CSS modules are handled by Next.js */
